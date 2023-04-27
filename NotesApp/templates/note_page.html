@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NoteApp</title>     
+        <style>                   
+            .home {
+                display:block;               
+                padding: 10px 50px;       
+                text-align:right;
+                color:maroon;        
+                font-size: 17px;
+            }  
+            .container {
+                display: flex;
+            } 
+            .notes_head {
+                color:red;
+                display: block;
+                width: 30%;
+                padding: 10px 780px;                   
+                text-justify:auto;
+                font-size: 20px;
+            }
+            .notes_list {
+                color:red;
+                display: block;            
+                padding: 10px 800px;        
+                text-justify:auto;
+                font-size: 17px;
+            }
+            h3, h6{
+                margin:0px;
+            }
+            h3 {
+                font-size: 45px;
+                line-height: 1;
+            }
+            h6 {
+                font-size: 24px;
+                line-height:1.5;
+            }
+            .form {                
+                width: 70%;
+                padding-left: 50px;
+            }
+        </style> 
+    </head> 
+    <body>                    
+        <div class = "home">
+            <span>WELCOME</span>            
+            <span>{{user.username}}</span>
+            <span>|</span>
+            <a href = '/notes/'>Logout</a>        
+        </div>  
+        <br>
+        <br>        
+        <h2 style="color: darkblue;">Add your notes here!</h2>  
+        <div class="container">
+            <div class="form">
+                <form method="POST">
+                {% csrf_token %}
+                {{note_form.as_p}}                
+                <input type="submit" value="Submit" />
+                {{message}}
+                </form>
+            </div>  
+        
+            <div>
+                <h3 class="notes_head" style=font-size:30>Notes:<h3>
+                <h6 class="notes_list"> {% for i in note %}
+                    <a href="/notes/viewnote/{{i.id}}"> {{i.title}} </a>
+                    <br>            
+                    {% endfor %}            
+                </h6>
+            </div>                     
+        </div>    
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NoteApp</title>
+        <style>
+            .login {
+                color: rgb(0, 0, 0);
+                font-size: 17px;
+                font-style: normal;
+                background-color: beige;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <div class="login">
+        <body>       
+            <br>
+            <br>        
+            <br>
+            <br>
+            <h2>Welcome to NoteApp!</h2> 
+            <br>
+            <br>
+            <br>    
+            <h2>Login</h2>
+            <form method="post" enctype="application/x-www-form-urlencoded">
+                {% csrf_token %}
+            <label> Username </label>         
+            <input type="text" name="username" required/> <br> <br>  
+            <label> Password: </label>         
+            <input type="password" name="password" required/> <br> <br> 
+            <input type = "submit" value="Login"/>                                                              
+            </form>
+            <br>
+            <br>
+            <br>
+        </body>
+    </div>
+</html>

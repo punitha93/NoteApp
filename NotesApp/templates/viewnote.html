@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NoteApp</title>     
+        <style> 
+            body {
+                background-color: #cfbebe;
+                font-family:'Times New Roman', Times, serif;
+            }
+            
+            h2 {
+                color: black;
+                font-size: 22px;
+                line-height: 1;
+                margin-top: 0px;
+                margin-left: 100px;
+                text-align: Left;
+            }
+            h4 {
+                color: red;
+                font-size: 20px;
+                margin-top: 50px;
+                font-style:oblique;
+            }
+            p {
+                color:black;
+                font-size: 20px;
+                line-height: 1;
+                margin-top: 50px;
+                margin-left: 100px;                
+                max-width: 600px;
+                text-align: justify;
+            }
+            .text {
+                color: red;
+                font-size: 20px;
+                font-style:oblique;
+                margin-top: 50px;
+            }
+            .note {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 30px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(218, 233, 212, 0.1);
+            }
+        </style> 
+    </head> 
+    <div class="note"> 
+        <body>   
+            <form>
+                <h2 style="color: darkblue; text-align: left;">Your Note {{note.id}}</h2>
+                <h4>Note Title: </h4>
+                    <h2>{{ note.title }}</h2> 
+                <br> 
+                <label class="text">Note Text: </label>           
+                    <p>{{ note.text }}</p>
+                    <br>
+                    <br>
+                    <br>  
+                <a href="/notes/update/{{note.id}}/"><h3 style="text-align:right">Edit note</h3></a>         
+                <a href="/notes/del/{{note.id}}/"><h3 style="text-align:right">Delete note</h3></a>
+                <br>
+                <br>
+                <br>     
+                <a href="/notes/notesave/">Back to Notes</a>                
+            </form>
+            <br>
+        </body>
+    </div>
+</html>

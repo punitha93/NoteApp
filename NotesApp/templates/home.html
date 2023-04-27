@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NoteApp</title>
+    
+        <style>
+            .signup_login {
+                float:right;        
+                padding: 5px 50px;
+                display:block;
+                text-align:center;
+                color:maroon;        
+                font-size: 17px;
+            }     
+            .form {                
+                width: 70%;
+                padding-left: 50px;
+            }                   
+        </style> 
+    </head>
+    <body>                          
+        <div class = "signup_login">
+            <a href = '/notes/signup/'>Signup</a>
+            <a href = '/notes/login/'>Login</a>        
+        </div>           
+        <h1>NoteApp</h1>         
+        <h2>Welcome to Notes Saving app!</h2>      
+        <br>
+        <br>        
+        <h2 style="color: darkblue;">Add your notes here!</h2>          
+        <form class="form">                            
+            {{note_form.as_p}}
+            <input type="submit" value="Submit"/>
+        </form>              
+    </body>
+</html>
